@@ -63,6 +63,14 @@ Route::middleware([
         Route::get('/contract-list', function(){
             return view('admin.contract-list');
         })->name('lists');
+
+        Route::get('/Monthly-amortization', function(){
+            return view('admin.monthly-amortization');
+        })->name('monthly');
+
+        Route::get('/Propert-application', function(){
+            return view('admin.property-application');
+        })->name('prop');
      });
 
      Route::prefix('client')->middleware('client')->group(function(){
@@ -74,6 +82,10 @@ Route::middleware([
         Route::get('/land', function(){
             return view('client.land');
         })->name('land');
+
+        Route::get('/Application-status', function(){
+            return view('client.application-status');
+        })->name('application');
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
      });

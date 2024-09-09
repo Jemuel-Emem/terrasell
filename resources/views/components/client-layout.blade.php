@@ -55,6 +55,9 @@
                         <a href="{{ route('land') }}" class="block py-2 px-3 text-green-500 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">LAND</a>
                     </li>
                     <li>
+                        <a href="{{ route('application') }}" class="block py-2 px-3 text-green-500 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Application Status</a>
+                    </li>
+                    <li>
                         <a href="{{ route('logout') }}" class="block py-2 px-3 text-red-500 uppercase font-bold bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Logout</a>
                     </li>
                 </ul>
@@ -62,7 +65,7 @@
         </div>
     </nav>
 
-    <div class="border-gray-200 rounded-lg dark:border-gray-700 max-h-max">
+    <div class="border-gray-200 rounded-lg dark:border-gray-700 h-screen">
         <main>
             {{ $slot }}
         </main>

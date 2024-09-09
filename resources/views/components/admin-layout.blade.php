@@ -87,7 +87,7 @@
         content: attr(value);
         display: block;
     }
-
+}
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -127,7 +127,7 @@
                     </div>
                 </a>
                 <li>
-                    <a href="Admindashboard"
+                    <a href="{{ route('admin-dashboard') }}"
                         class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
                         <i class="ri-dashboard-fill"></i>
                         <span class="ms-3">DASHBOARD</span>
@@ -143,6 +143,13 @@
                     <a href="{{ route('add-landowner') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
                         <i class="ri-flight-land-line"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">LANDOWNER</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('prop') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
+                        <i class="ri-flight-land-line"></i>
+                        <span class="flex-1 ms-3 whitespace-nowrap">PROPERTY APPLICATION</span>
                     </a>
                 </li>
                 <li>
@@ -165,7 +172,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
+                    <a href="{{ route('monthly') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
                         <i class="ri-money-dollar-circle-fill"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">MONTHLY AMORTIZATION</span>
                     </a>

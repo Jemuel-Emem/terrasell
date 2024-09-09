@@ -9,20 +9,23 @@
         <table class="min-w-full bg-white border border-gray-200">
             <thead>
                 <tr class="border-b bg-gray-100">
-                    <th class="p-2 text-left">Contract ID</th>
+                    {{-- <th class="p-2 text-left">Contract ID</th> --}}
                     <th class="p-2 text-left">Buyer Name</th>
                     <th class="p-2 text-left">Seller Name</th>
-                    <th class="p-2 text-left">Actions</th>
+                    <th class="p-2 text-left">Land Location</th>
+                    {{-- <th class="p-2 text-left">Actions</th> --}}
                 </tr>
             </thead>
             <tbody>
                 @foreach($contracts as $contract)
                     <tr>
-                        <td class="p-2 border-b">{{ $contract->id }}</td>
+                        {{-- <td class="p-2 border-b">{{ $contract->id }}</td> --}}
                         <td class="p-2 border-b">{{ $contract->BuyersName }}</td>
                         <td class="p-2 border-b">{{ $contract->SellersName }}</td>
+                        <td class="p-2 border-b">{{ $contract->LandLocation }}</td>
 
-                            <td class="">
+
+                            {{-- <td class="">
                                 <x-button class="w-16 h-6" label="View" icon="pencil-alt" wire:click="viewcontracttosell" positive />
                                     <x-button class="w-16 h-6" label="delete" icon="pencil-alt"
                                     x-on:confirm="{
@@ -31,7 +34,7 @@
                                         method: 'delete',
                                         params:
                                     }" negative />
-                            </td>
+                            </td> --}}
 
                     </tr>
                 @endforeach
