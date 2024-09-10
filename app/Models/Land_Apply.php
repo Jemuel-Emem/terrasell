@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Land_Apply extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
         'location',

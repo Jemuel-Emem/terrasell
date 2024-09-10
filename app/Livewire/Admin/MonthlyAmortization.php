@@ -1,25 +1,26 @@
 <?php
 
 namespace App\Livewire\Admin;
+
+use App\Models\Land_Apply;
 use App\Models\monthly_amortization_table as MonthlyAmortizationTable;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log; // Import Log Facade
 use Livewire\Component;
 
 class MonthlyAmortization extends Component
-{use WithPagination;
+{
+    use WithPagination;
 
     public $add_modal = false;
     public $edit_modal = false;
-
-    // Form fields
     public $buyersname, $buyersdetails, $phase, $blockno, $lotno, $area, $monthlypayment, $totalpayment;
-
-    // ID for editing
     public $buyerId;
+    public $buyerNames = [];
 
     protected $rules = [
-        'buyersname' => 'required|string|max:255',
+        'buyersname' => 'required|exists:land_apply,id',
         'buyersdetails' => 'required|string|max:255',
         'phase' => 'required|string|max:255',
         'blockno' => 'required|string|max:50',
@@ -29,30 +30,47 @@ class MonthlyAmortization extends Component
         'totalpayment' => 'required|numeric',
     ];
 
+    public function mount()
+    {
+
+        $this->buyerNames = Land_Apply::where('status', 'approved')
+                                       ->pluck('name', 'name')
+                                       ->toArray();
+    }
+
+
+
     public function render()
     {
         $buyers = MonthlyAmortizationTable::paginate(10);
-        return view('livewire.admin.monthly-amortization', ['buyers' => $buyers]);
+        return view('livewire.admin.monthly-amortization', [
+            'buyers' => $buyers,
+            'buyerNames' => $this->buyerNames,
+        ]);
     }
 
     public function addBuyer()
     {
-        $this->validate();
 
-        // Create new buyer
-        MonthlyAmortizationTable::create([
-            'user_id'=>Auth::user()->id,
-            'buyersname' => $this->buyersname,
-            'buyersdetails' => $this->buyersdetails,
-            'phase' => $this->phase,
-            'blockno' => $this->blockno,
-            'lotno' => $this->lotno,
-            'area' => $this->area,
-            'monthlypayment' => $this->monthlypayment,
-            'totalpayment' => $this->totalpayment,
-        ]);
+        $userId = Land_Apply::where('name', $this->buyersname)->value('user_id');
 
-        // Reset form fields
+    if (!$userId) {
+        session()->flash('error', 'User ID not found for the selected buyer.');
+        return;
+    }
+
+
+    MonthlyAmortizationTable::create([
+        'user_id' => $userId,
+        'buyersname' => $this->buyersname,
+        'buyersdetails' => $this->buyersdetails,
+        'phase' => $this->phase,
+        'blockno' => $this->blockno,
+        'lotno' => $this->lotno,
+        'area' => $this->area,
+        'monthlypayment' => $this->monthlypayment,
+        'totalpayment' => $this->totalpayment,
+    ]);
         $this->resetFields();
         $this->add_modal = false;
         session()->flash('message', 'Buyer added successfully.');
@@ -61,8 +79,6 @@ class MonthlyAmortization extends Component
     public function edit($id)
     {
         $buyer = MonthlyAmortizationTable::findOrFail($id);
-
-        // Set form fields with buyer data
         $this->buyerId = $buyer->id;
         $this->buyersname = $buyer->buyersname;
         $this->buyersdetails = $buyer->buyersdetails;
@@ -72,16 +88,12 @@ class MonthlyAmortization extends Component
         $this->area = $buyer->area;
         $this->monthlypayment = $buyer->monthlypayment;
         $this->totalpayment = $buyer->totalpayment;
-
-        // Open edit modal
         $this->edit_modal = true;
     }
 
     public function updateBuyer()
     {
         $this->validate();
-
-        // Update the buyer
         $buyer = MonthlyAmortizationTable::findOrFail($this->buyerId);
         $buyer->update([
             'buyersname' => $this->buyersname,
@@ -93,8 +105,6 @@ class MonthlyAmortization extends Component
             'monthlypayment' => $this->monthlypayment,
             'totalpayment' => $this->totalpayment,
         ]);
-
-        // Reset form fields
         $this->resetFields();
         $this->edit_modal = false;
         session()->flash('message', 'Buyer updated successfully.');
@@ -102,7 +112,6 @@ class MonthlyAmortization extends Component
 
     public function delete($id)
     {
-        // Delete buyer record
         MonthlyAmortizationTable::findOrFail($id)->delete();
         session()->flash('message', 'Buyer deleted successfully.');
     }

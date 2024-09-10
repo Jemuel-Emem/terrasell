@@ -1,9 +1,10 @@
 <div>
-    {{-- <x-alert class="bg-green-700 text-green-100 p-4" /> --}}
+    {{-- Add Monthly Amortization Button --}}
     <div class="flex justify-end">
         <x-button label="Add Monthly Amortization" emerald icon="plus" wire:click="$set('add_modal', true)" />
     </div>
 
+    {{-- Data Table --}}
     <div class="relative overflow-x-auto mt-4">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -31,8 +32,7 @@
                         <td class="px-6 py-4">{{ $buyer->monthlypayment }}</td>
                         <td class="px-6 py-4">{{ $buyer->totalpayment }}</td>
                         <td class="px-6 py-4 flex gap-2 mt-4 justify-center">
-                            <x-button class="w-16 h-6" label="edit" icon="pencil-alt"
-                                wire:click="edit({{ $buyer->id }})" positive />
+                            <x-button class="w-16 h-6" label="edit" icon="pencil-alt" wire:click="edit({{ $buyer->id }})" positive />
                             <x-button class="w-16 h-6" label="delete" icon="trash"
                                 x-on:confirm="{
                                     title: 'Are you sure?',
@@ -58,7 +58,14 @@
     <x-modal wire:model.defer="add_modal">
         <x-card title="Add Buyer">
             <div class="space-y-3">
-                <x-input label="Buyer's Name" placeholder="" wire:model="buyersname" />
+                <label for="buyersname">Buyer's Name</label>
+                <select id="buyersname" wire:model="buyersname" class="form-select">
+                    <option value="">Select a buyer</option>
+                    @foreach($buyerNames as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
+
                 <x-input label="Buyer's Details" wire:model="buyersdetails" placeholder="" />
                 <x-input label="Phase" placeholder="" wire:model="phase" />
                 <x-input label="Block No" placeholder="" wire:model="blockno" />
@@ -81,7 +88,15 @@
     <x-modal wire:model.defer="edit_modal">
         <x-card title="Edit Buyer">
             <div class="space-y-3">
-                <x-input label="Buyer's Name" placeholder="" wire:model="buyersname" />
+                <label for="edit_buyersname" class="block text-sm font-medium text-gray-700">Buyer's Name</label>
+                <select id="edit_buyersname" wire:model="buyersname" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50">
+                    <option value="" disabled>Select a buyer</option>
+                    @foreach($buyerNames as $id => $name)
+                        <option value="{{ $name}}">{{ $name }}</option>
+                    @endforeach
+                </select>
+
+
                 <x-input label="Buyer's Details" wire:model="buyersdetails" placeholder="" />
                 <x-input label="Phase" placeholder="" wire:model="phase" />
                 <x-input label="Block No" placeholder="" wire:model="blockno" />
