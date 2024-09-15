@@ -16,7 +16,11 @@
                     <th scope="col" class="px-6 py-3">Lot No</th>
                     <th scope="col" class="px-6 py-3">Area</th>
                     <th scope="col" class="px-6 py-3">Monthly Payment</th>
-                    <th scope="col" class="px-6 py-3">Total Payment</th>
+                    <th scope="col" class="px-6 py-3">Total Fee</th>
+                    <th scope="col" class="px-6 py-3">Total Cost</th>
+                    <th scope="col" class="px-6 py-3">Balance</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+
                     <th scope="col" class="px-6 py-3 text-center">Action</th>
                 </tr>
             </thead>
@@ -30,9 +34,19 @@
                         <td class="px-6 py-4">{{ $buyer->lotno }}</td>
                         <td class="px-6 py-4">{{ $buyer->area }}</td>
                         <td class="px-6 py-4">{{ $buyer->monthlypayment }}</td>
+                        <td class="px-6 py-4">{{ $buyer->totalfee }}</td>
                         <td class="px-6 py-4">{{ $buyer->totalpayment }}</td>
+                        <td class="px-6 py-4">{{ $buyer->monthlypayment - $buyer->totalfee }}</td>
+                        @if ($buyer->totalfee>=$buyer->totalpayment)
+
+                        <td class="py-2 px-4  text-center text-green-500">Paid</td>
+
+                        @else
+                        <td class="py-2 px-4  text-center text-red-500">Not Paid</td>
+                        @endif
+
                         <td class="px-6 py-4 flex gap-2 mt-4 justify-center">
-                            <x-button class="w-16 h-6" label="edit" icon="pencil-alt" wire:click="edit({{ $buyer->id }})" positive />
+                            <x-button class="w-16 h-6" label="View" icon="pencil-alt" wire:click="edit({{ $buyer->id }})" positive />
                             <x-button class="w-16 h-6" label="delete" icon="trash"
                                 x-on:confirm="{
                                     title: 'Are you sure?',
@@ -103,13 +117,15 @@
                 <x-input label="Lot No" placeholder="" wire:model="lotno" />
                 <x-input label="Area" placeholder="" wire:model="area" />
                 <x-input label="Monthly Payment" placeholder="" wire:model="monthlypayment" />
-                <x-input label="Total Payment" placeholder="" wire:model="totalpayment" />
+                <x-input label="Total Payment" placeholder="" wire:model="totalfee" />
+                <x-input label="Total Cost" placeholder="" wire:model="totalpayment" />
+
             </div>
 
             <x-slot name="footer">
                 <div class="flex justify-end gap-x-4">
                     <x-button flat label="Cancel" x-on:click="close" />
-                    <x-button label="Update Buyer" wire:click="updateBuyer" spinner="updateBuyer" emerald />
+                    <x-button label="Update " wire:click="updateBuyer" spinner="updateBuyer" emerald />
                 </div>
             </x-slot>
         </x-card>

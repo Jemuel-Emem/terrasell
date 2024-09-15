@@ -46,16 +46,20 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <div class="hidden w-full md:block md:w-auto bg-gray-500  p-2 shadow-warning-200 rounded" id="navbar-default">
                 <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="{{ route('client-dashboard') }}" class="block py-2 px-3 text-green-500 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+                        <a href="{{ route('client-dashboard') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="{{ route('land') }}" class="block py-2 px-3 text-green-500 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">LAND</a>
+                        <a href="{{ route('land') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">LAND</a>
                     </li>
                     <li>
-                        <a href="{{ route('application') }}" class="block py-2 px-3 text-green-500 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Application Status</a>
+                        <a href="{{ route('application') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Application Status</a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('amorz') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Monthly Amortization</a>
                     </li>
                     <li>
                         <a href="{{ route('logout') }}" class="block py-2 px-3 text-red-500 uppercase font-bold bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Logout</a>

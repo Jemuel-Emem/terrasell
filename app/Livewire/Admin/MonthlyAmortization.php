@@ -16,7 +16,7 @@ class MonthlyAmortization extends Component
     public $add_modal = false;
     public $edit_modal = false;
     public $buyersname, $buyersdetails, $phase, $blockno, $lotno, $area, $monthlypayment, $totalpayment;
-    public $buyerId;
+    public $buyerId, $totalfee;
     public $buyerNames = [];
 
     protected $rules = [
@@ -88,12 +88,13 @@ class MonthlyAmortization extends Component
         $this->area = $buyer->area;
         $this->monthlypayment = $buyer->monthlypayment;
         $this->totalpayment = $buyer->totalpayment;
+        $this->totalfee = $buyer->totalfee;
         $this->edit_modal = true;
     }
 
     public function updateBuyer()
     {
-        $this->validate();
+       // $this->validate();
         $buyer = MonthlyAmortizationTable::findOrFail($this->buyerId);
         $buyer->update([
             'buyersname' => $this->buyersname,
@@ -104,6 +105,7 @@ class MonthlyAmortization extends Component
             'area' => $this->area,
             'monthlypayment' => $this->monthlypayment,
             'totalpayment' => $this->totalpayment,
+            'totalfee' => $this->totalfee,
         ]);
         $this->resetFields();
         $this->edit_modal = false;

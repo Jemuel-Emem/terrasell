@@ -19,5 +19,6 @@ class monthly_amortization_table extends Model
         'area',
         'monthlypayment',
         'totalpayment',
+        'totalfee',
     ];
 }

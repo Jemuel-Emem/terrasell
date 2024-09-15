@@ -87,6 +87,10 @@ Route::middleware([
             return view('client.application-status');
         })->name('application');
 
+        Route::get('/Monthly-amortization', function(){
+            return view('client.monthly-amortization');
+        })->name('amorz');
+
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
      });
 

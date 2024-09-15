@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('area');
             $table->decimal('monthlypayment', 10, 2);
             $table->decimal('totalpayment', 10, 2);
+            $table->decimal('totalfee', 10, 2)->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
