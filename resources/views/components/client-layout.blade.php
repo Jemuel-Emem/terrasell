@@ -61,6 +61,10 @@
                     <li>
                         <a href="{{ route('amorz') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Monthly Amortization</a>
                     </li>
+
+                    <li>
+                        <a href="{{ route('payment') }}" class="block py-2 px-3 text-white uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Payment</a>
+                    </li>
                     <li>
                         <a href="{{ route('logout') }}" class="block py-2 px-3 text-red-500 uppercase font-bold bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Logout</a>
                     </li>

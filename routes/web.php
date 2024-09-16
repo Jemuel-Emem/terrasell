@@ -71,6 +71,10 @@ Route::middleware([
         Route::get('/Propert-application', function(){
             return view('admin.property-application');
         })->name('prop');
+
+        Route::get('/Payment-list', function(){
+            return view('admin.payment');
+        })->name('paym');
      });
 
      Route::prefix('client')->middleware('client')->group(function(){
@@ -90,6 +94,10 @@ Route::middleware([
         Route::get('/Monthly-amortization', function(){
             return view('client.monthly-amortization');
         })->name('amorz');
+
+        Route::get('/Payment', function(){
+            return view('client.payment');
+        })->name('payment');
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
      });

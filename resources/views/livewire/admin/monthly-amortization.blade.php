@@ -36,7 +36,7 @@
                         <td class="px-6 py-4">{{ $buyer->monthlypayment }}</td>
                         <td class="px-6 py-4">{{ $buyer->totalfee }}</td>
                         <td class="px-6 py-4">{{ $buyer->totalpayment }}</td>
-                        <td class="px-6 py-4">{{ $buyer->monthlypayment - $buyer->totalfee }}</td>
+                        <td class="px-6 py-4">{{ $buyer->totalpayment-  $buyer->totalfee }}</td>
                         @if ($buyer->totalfee>=$buyer->totalpayment)
 
                         <td class="py-2 px-4  text-center text-green-500">Paid</td>

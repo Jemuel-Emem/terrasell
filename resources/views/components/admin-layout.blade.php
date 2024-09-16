@@ -153,9 +153,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
+                    <a href="{{ route('paym') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
                         <i class="ri-refund-fill"></i>
-                        <span class="flex-1 ms-3 whitespace-nowrap">PAYMENT RECEIPT LIST</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">PAYMENT </span>
                     </a>
                 </li>
                 <li>
