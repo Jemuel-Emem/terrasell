@@ -148,7 +148,7 @@
 
                 <li>
                     <a href="{{ route('prop') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
-                        <i class="ri-flight-land-line"></i>
+                        <i class="ri-book-open-fill"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">PROPERTY APPLICATION</span>
                     </a>
                 </li>
@@ -160,20 +160,20 @@
                 </li>
                 <li>
                     <a href="{{ route('contract') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
-                        <i class="ri-contract-left-line"></i>
+                        <i class="ri-article-fill"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">CONTRACT TO SELL FORM</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{ route('lists') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
-                        <i class="ri-contract-left-line"></i>
+                        <i class="ri-survey-fill"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">CONTRACT TO SELL LIST</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('monthly') }}" class="flex items-center p-2 text-white hover:text-blue-500 rounded-lg dark:text-white dark:hover:bg-gray-700 group">
-                        <i class="ri-money-dollar-circle-fill"></i>
+                        <i class="ri-bank-card-2-fill"></i>
                         <span class="flex-1 ms-3 whitespace-nowrap">MONTHLY AMORTIZATION</span>
                     </a>
                 </li>

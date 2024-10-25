@@ -58,46 +58,48 @@
             <x-card title="Apply for Land">
                 <form wire:submit.prevent="submitApplication">
                     <div class="space-y-4">
-                        <!-- Location -->
+
                         <div>
                             <x-input label="Location" value="{{ $selected_land['location'] ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Address -->
+
                         <div>
                             <x-input label="Address" value="{{ $selected_land['address'] ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Land Measurement -->
+
                         <div>
                             <x-input label="Land Measurement" value="{{ $selected_land['landmeasurement'] ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Price -->
+
                         <div>
                             <x-input label="Price" value="{{ $selected_land['price'] ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Applicant's Name (Automatically Filled) -->
+
                         <div>
                             <x-input label="Your Name" value="{{ Auth::user()->name ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Applicant's Phone Number (Automatically Filled) -->
+
                         <div>
                             <x-input label="Phone Number" value="{{ Auth::user()->number ?? 'N/A' }}" readonly />
                         </div>
 
-                        <!-- Message Field -->
+                        <div>
+                            <x-input type="date" label="Select Booking Date" wire:model.defer="booking_date" />
+                        </div>
 
                     </div>
 
-                    <!-- Footer with Action Buttons -->
+
                     <x-slot name="footer">
                         <div class="flex justify-end space-x-4">
                             <x-button flat label="Cancel" wire:click="$set('apply_modal', false)" />
                             <x-button class="bg-green-500 text-white" wire:click="submitApplication({{ $lands->id }})">
-                                Apply Now
+                                Book Now
                             </x-button>
 
                         </div>

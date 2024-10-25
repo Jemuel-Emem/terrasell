@@ -5,17 +5,18 @@ namespace App\Livewire\Client;
 use App\Models\PostLand;
 use App\Models\Land_Apply;
 use Livewire\Component;
+use WireUi\Traits\Actions;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Auth;
 
 class Land extends Component
 {
     use WithPagination;
-
+   use Actions;
     public $search;
-    public $apply_modal = false; // For modal visibility
-    public $selected_land = []; // To hold selected land data
-
+    public $apply_modal = false;
+    public $selected_land = [];
+    public $booking_date;
     public function render()
     {
         $search = '%' . $this->search . '%';
@@ -56,29 +57,33 @@ class Land extends Component
     public function submitApplication()
     {
 
-        // Ensure the user is authenticated
+
         $user = Auth::user();
 
         if ($user && $this->selected_land) {
-            // Save the application details in the Land_Apply table
+
             Land_Apply::create([
                 'user_id' => $user->id,
                 'location' => $this->selected_land['location'],
                 'address' => $this->selected_land['address'],
                 'landmeasurement' => $this->selected_land['landmeasurement'],
                 'price' => $this->selected_land['price'],
-                'name' => $user->name, // Using the authenticated user's name
-                'number' => $user->number, // Assuming 'number' is a field in the User model
+                'name' => $user->name,
+                'number' => $user->number,
+                'appointment_schedule' =>$this->booking_date,
             ]);
 
-            // Optionally add a success message or notification
-            session()->flash('message', 'Application submitted successfully.');
+            $this->notification()->success(
+                $title = 'Book Application !',
+                $description = 'Application submitted successfully.'
+            );
 
-            // Reset the modal and selected land data
+
+
             $this->apply_modal = false;
             $this->selected_land = [];
         } else {
-            // Handle cases when user is not authenticated or land is missing
+
             $this->addError('application', 'Unable to submit application. Please try again.');
         }
     }

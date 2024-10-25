@@ -17,5 +17,6 @@ class Land_Apply extends Model
         'price',
         'name',
         'number',
+        'appointment_schedule'
     ];
 }

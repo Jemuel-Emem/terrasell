@@ -70,7 +70,7 @@
 
     {{-- Add Buyer Modal --}}
     <x-modal wire:model.defer="add_modal">
-        <x-card title="Add Buyer">
+        <x-card title="Add Ammortization">
             <div class="space-y-3">
                 <label for="buyersname">Buyer's Name</label>
                 <select id="buyersname" wire:model="buyersname" class="form-select">
@@ -92,7 +92,7 @@
             <x-slot name="footer">
                 <div class="flex justify-end gap-x-4">
                     <x-button flat label="Cancel" x-on:click="close" />
-                    <x-button label="Add Buyer" wire:click="addBuyer" spinner="addBuyer" emerald />
+                    <x-button label="Add Data" wire:click="addBuyer" spinner="addBuyer" emerald />
                 </div>
             </x-slot>
         </x-card>

@@ -34,6 +34,8 @@
 </head>
 
 <body class="font-sans antialiased h-full bg-no-repeat bg-cover background-farm">
+    <x-notifications position="top-right" />
+    <x-dialog z-index="z-50" blur="md" align="center" />
     <nav class="bg-bermuda border-gray-200 dark:bg-gray-900">
         <div class="flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">

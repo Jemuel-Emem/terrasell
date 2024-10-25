@@ -1,5 +1,5 @@
 
-<div>
+<div class="ml-60">
     {{-- <x-alert class="bg-green-700 text-green-100 p-4" /> --}}
 
       <div class="flex justify-end">

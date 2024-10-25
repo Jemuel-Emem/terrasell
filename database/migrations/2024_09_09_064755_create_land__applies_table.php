@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('price', 15, 2);
             $table->string('name');
             $table->string('number');
+            $table->dateTime('appointment_schedule')->nullable();
             $table->string('status')->default('pending');
 
             $table->timestamps();
