@@ -12,8 +12,8 @@
                         <th class="py-2 px-4 border">Due Date</th>
                         <th class="py-2 px-4 border">Monthly Payment Fee</th>
                         <th class="py-2 px-4 border">Total Fee</th>
-                        <th class="py-2 px-4 border">Total Cost</th>
                         <th class="py-2 px-4 border">Balance</th>
+                        {{-- <th class="py-2 px-4 border">Balance</th> --}}
                         <th class="py-2 px-4 border">Status</th>
                     </tr>
                 </thead>
@@ -26,7 +26,7 @@
                             <td class="py-2 px-4 border text-center">{{ $amortization->monthlypayment }}</td>
                             <td class="py-2 px-4 border text-center">{{ $amortization->totalfee }}</td>
                             <td class="py-2 px-4 border text-center">{{ $amortization->totalpayment }}</td>
-                            <td class="py-2 px-4 border text-center">{{ $amortization->totalpayment - $amortization->totalfee }}</td>
+                            {{-- <td class="py-2 px-4 border text-center">{{ $amortization->totalpayment - $amortization->totalfee }}</td> --}}
                              @if ($amortization->totalfee>=$amortization->totalpayment)
                              <td class="py-2 px-4 border text-center text-green-500">Paid</td>
 

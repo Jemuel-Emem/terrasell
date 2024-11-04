@@ -93,54 +93,53 @@
             <li>That the ownership of the said parcel of land shall remain with the SELLER pending full payment of the total consideration, further, the BUYER is not allowed to lease or sell the parcel of land to any party unless the said consideration is fully paid. In the event that the said parcel of land is sold as a whole, the Seller shall return to the Buyer the full amount;</li>
             <li>Any violation thereof shall rescind this contract and forfeit all payment paid thereon in favor to the SELLER;</li>
         </ol>
-    </div>
 
-    <section class="mt-8">
-        <p class="mb-4">
-            <span class="font-semibold">8.</span>
-            That all necessary expenses for land survey, segregation and notarization of necessary documents shall be for the account of the SELLER. The SELLER shall be responsible to clear the area and deliver the same to the BUYER;
-        </p>
-        <p class="mb-4">
-            <span class="font-semibold">9.</span>
-            That the BUYER shall after full payment of the said lot by the SELLER deliver the title of the lot and the Deed of Absolute Sale to the latter. The BUYER shall be responsible for the transfer of title in his/her name and to pay the Capital Gains Tax, Documentary Stamp Tax and other related expenses for the transfer of title in his/her name. The SELLER shall assist the BUYER in the processing of the title;
-        </p>
-        <p class="mb-4">
-            <span class="font-semibold">10.</span>
-            That the BUYER shall join and maintain the association to be formed later and shall continue to maintain a good standing in the association;
-        </p>
-        <p class="mb-4">
-            <span class="font-semibold">11.</span>
-            That in case of suit, the venue shall be in the proper courts in Isulan, Sultan Kudarat only.
-        </p>
-    </section>
+        <section class="mt-8">
+            <p class="mb-4">
+                <span class="font-semibold">8.</span>
+                That all necessary expenses for land survey, segregation and notarization of necessary documents shall be for the account of the SELLER. The SELLER shall be responsible to clear the area and deliver the same to the BUYER;
+            </p>
+            <p class="mb-4">
+                <span class="font-semibold">9.</span>
+                That the BUYER shall after full payment of the said lot by the SELLER deliver the title of the lot and the Deed of Absolute Sale to the latter. The BUYER shall be responsible for the transfer of title in his/her name and to pay the Capital Gains Tax, Documentary Stamp Tax and other related expenses for the transfer of title in his/her name. The SELLER shall assist the BUYER in the processing of the title;
+            </p>
+            <p class="mb-4">
+                <span class="font-semibold">10.</span>
+                That the BUYER shall join and maintain the association to be formed later and shall continue to maintain a good standing in the association;
+            </p>
+            <p class="mb-4">
+                <span class="font-semibold">11.</span>
+                That in case of suit, the venue shall be in the proper courts in Isulan, Sultan Kudarat only.
+            </p>
+        </section>
 
-    <section class="mt-8">
-        <p class="text-center font-semibold">IN WITNESS WHEREOF</p>
-        <p class="text-center">the parties have hereunto set their hands, this ____ day of October 2021 in the Province of Isulan, Sultan Kudarat, Philippines.</p>
-    </section>
+        <section class="mt-8">
+            <p class="text-center font-semibold">IN WITNESS WHEREOF</p>
+            <p class="text-center">the parties have hereunto set their hands, this ____ day of October 2021 in the Province of Isulan, Sultan Kudarat, Philippines.</p>
+        </section>
 
-    <section class="mt-12 flex justify-between">
-        <div class="text-center">
-            <p class="font-bold">Seller Name</p>
-            <p class="text-sm">Seller</p>
-        </div>
-        <div class="text-center">
-            <p class="font-bold">Buyer Name</p>
-            <p class="text-sm">Buyer</p>
-        </div>
-    </section>
-
-    <section class="mt-8">
-        <p>Signed in the presence of:</p>
-        <div class="mt-4 flex justify-between">
+        <section class="mt-12 flex justify-between">
             <div class="text-center">
-                <p class="underline">_________________________</p>
+                <p class="font-bold">Seller Name</p>
+                <p class="text-sm">Seller</p>
             </div>
             <div class="text-center">
-                <p class="underline">_________________________</p>
+                <p class="font-bold">Buyer Name</p>
+                <p class="text-sm">Buyer</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="mt-8">
+            <p>Signed in the presence of:</p>
+            <div class="mt-4 flex justify-between">
+                <div class="text-center">
+                    <p class="underline">_________________________</p>
+                </div>
+                <div class="text-center">
+                    <p class="underline">_________________________</p>
+                </div>
+            </div>
+        </section>
 
     <section class="mt-8">
         <h3 class="font-bold underline">ACKNOWLEDGMENT</h3>
@@ -167,6 +166,7 @@
             <p class="text-sm">Doc No. ____<br>Page No. ____<br>Book No. ____<br>Series of 2021</p>
         </div>
     </section>
+    </div>
 
     <div class="flex justify-center gap-2">
         <button class="bg-gray-500 hover:bg-gray-600 text-white w-64 p-2 h-12 mb-4 mt-4" wire:click="save">Save</button>

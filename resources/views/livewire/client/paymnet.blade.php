@@ -44,7 +44,7 @@
 
         <!-- Submit Button -->
         <div class="mt-6">
-            <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300 transition duration-150 ease-in-out w-full">
+            <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:ring-green-300 transition duration-150 ease-in-out w-full">
                 Submit Payment
             </button>
         </div>

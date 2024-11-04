@@ -20,10 +20,15 @@ class Land extends Component
     public function render()
     {
         $search = '%' . $this->search . '%';
+
         return view('livewire.client.land', [
-            'land' => PostLand::where('location', 'like', $search)->paginate(10),
+            'land' => PostLand::where('location', 'like', $search)
+                             ->orWhere('address', 'like', $search)
+                             ->orWhere('price', 'like', $search)
+                             ->paginate(10),
         ]);
     }
+
 
     public function find()
     {
