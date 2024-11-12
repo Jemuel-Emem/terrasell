@@ -32,18 +32,15 @@ class Land extends Component
 
     public function find()
     {
-        // This will rerender the view
+
         $this->render();
     }
 
     public function applyNow($landId)
     {
-        // Find the selected land by its ID
         $land = PostLand::find($landId);
 
-        // Check if the land exists to avoid errors
         if ($land) {
-            // Set the selected land details
             $this->selected_land = [
                 'location' => $land->location,
                 'address' => $land->address,
@@ -51,13 +48,14 @@ class Land extends Component
                 'price' => $land->price,
             ];
 
-            // Open the modal
             $this->apply_modal = true;
+
+
         } else {
-            // Handle case when land is not found
             $this->addError('selected_land', 'Land not found.');
         }
     }
+
 
     public function submitApplication()
     {

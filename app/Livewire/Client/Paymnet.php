@@ -12,6 +12,7 @@ class Paymnet extends Component
 {
     use WithFileUploads;
 
+    public $mop;
     public $name;
     public $amount;
     public $receipt;
@@ -26,15 +27,18 @@ class Paymnet extends Component
     public function submitPayment()
     {
 
-        $validatedData = $this->validate([
+        $this->validate([
+            'selectedAmortization' => 'required',
             'name' => 'required|string',
-            'amount' => 'required|numeric|min:1',
-            'receipt' => 'required|file|max:1024',
-            'selectedAmortization' => 'required|exists:monthly_amortization_tables,id',
+            'amount' => 'required|numeric',
+            'mop' => 'required',
+            'receipt' => $this->mop === 'gcash' ? 'required|file|mimes:jpg,png,pdf' : 'nullable',
         ]);
 
-
-        $receiptPath = $this->receipt->store('receipts', 'public');
+        $receiptPath = null;
+        if ($this->mop === 'gcash' && $this->receipt) {
+            $receiptPath = $this->receipt->store('receipts', 'public');
+        }
 
 
         Payment::create([
@@ -43,6 +47,7 @@ class Paymnet extends Component
             'name' => $this->name,
             'amount' => $this->amount,
             'receipt_path' => $receiptPath,
+            'mop'=>$this->mop
         ]);
 
 

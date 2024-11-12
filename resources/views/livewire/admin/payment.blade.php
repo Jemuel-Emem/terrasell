@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th class="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                <th class="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">MOP</th>
                 <th class="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Amount</th>
                 <th class="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Receipt</th>
                 <th class="px-6 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
@@ -16,6 +17,7 @@
             @foreach($payments as $payment)
                 <tr>
                     <td class="px-6 py-4 border-b border-gray-200">{{ $payment->name }}</td>
+                    <td class="px-6 py-4 border-b border-gray-200 "><p class="bg-blue-500 text-center rounded-md text-white w-18 ">{{ $payment->mop }}</p></td>
                     <td class="px-6 py-4 border-b border-gray-200">{{ $payment->amount }}</td>
                     <td class="px-6 py-4 border-b border-gray-200">
                         <a href="{{ asset('storage/' . $payment->receipt_path) }}" target="_blank" class="text-indigo-600 hover:text-indigo-900">View</a>

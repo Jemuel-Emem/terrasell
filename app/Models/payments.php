@@ -16,6 +16,7 @@ class payments extends Model
         'amount',
         'receipt_path',
         'status',
+        'mop'
     ];
 
     // Define relationship with User

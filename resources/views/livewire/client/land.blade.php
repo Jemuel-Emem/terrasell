@@ -66,7 +66,7 @@
                     <x-slot name="footer">
                         <div class="flex justify-end space-x-4">
                             <x-button flat label="Cancel" wire:click="$set('apply_modal', false)" />
-                            <x-button class="bg-green-500 text-white" type="submit">
+                            <x-button class="bg-green-500 text-white" wire:click="submitApplication">
                                 Book Now
                             </x-button>
                         </div>
