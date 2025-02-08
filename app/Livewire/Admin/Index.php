@@ -15,9 +15,9 @@ class Index extends Component
 
     public function mount()
     {
-       
+
         $this->userCount = User::count();
-        $this->agentCount = Agent::count();
+        $this->agentCount = User::where('is_admin', 2)->count();
         $this->landownerCount = Landowner::count();
     }
 

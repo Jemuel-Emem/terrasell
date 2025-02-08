@@ -25,6 +25,7 @@ class Land extends Component
             'land' => PostLand::where('location', 'like', $search)
                              ->orWhere('address', 'like', $search)
                              ->orWhere('price', 'like', $search)
+                             ->orWhere('landmeasurement', 'like', $search)
                              ->paginate(10),
         ]);
     }

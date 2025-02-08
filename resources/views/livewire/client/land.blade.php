@@ -2,7 +2,7 @@
     <div class="mt-4 p-4">
         <div class="grid grid-cols-2 gap-4">
             <div>
-                <x-input wire:model="search" placeholder="Enter  address, or price" label="Search address or price "></x-input>
+                <x-input wire:model="search" placeholder="Enter  address ,price and land measurement" label="Search address price and land measurement"></x-input>
             </div>
             <div class="mt-6">
                 <x-button class="w-64 bg-green-700 text-white hover:bg-green-800" wire:click="find">Search</x-button>
