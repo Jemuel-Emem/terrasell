@@ -30,7 +30,10 @@
                          Photo
                         </th>
                         <th scope="col" class="px-6 py-3">
-                        Videos
+                        Video
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Category
                         </th>
                        <th scope="col" class="px-6 py-3 text-center">
                            Action
@@ -51,6 +54,7 @@
                         <source src="{{ Storage::url($q->video) }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video></td>
+                    <td class="px-6 py-4">{{ $q->category }}</td>
 
                       <td class="px-6 py-4 flex gap-2 mt-4 justify-center">
                         <x-button class="w-16 h-6" label="edit" icon="pencil-alt" wire:click="edit({{ $q->id }})" positive />
@@ -86,6 +90,12 @@
                    <x-input label="Location" wire:model="location" placeholder="" />
                    <x-input label="Price" placeholder="" wire:model="price" />
                    <x-input label="Land Measurement" placeholder="" wire:model="landmeasurement" />
+                   <x-select
+                   label="Select Category"
+                   placeholder="Select one status"
+                   :options="['','Residential', 'Commercial', 'Agriculture']"
+                   wire:model.defer="category"
+               />
                    <x-input label="Photo" placeholder="" wire:model="photo" type="file"/>
                    <x-input label="Video" placeholder="" wire:model="video" type="file"/>
 

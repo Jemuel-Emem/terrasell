@@ -37,6 +37,10 @@
                             <label class="text-gray-500">Price:</label>
                             {{ $lands->price }}
                         </div>
+                        <div class="flex gap-4 mt-2">
+                            <label class="text-gray-500">Category:</label>
+                            {{ $lands->category }}
+                        </div>
                         <footer class="mt-4 text-center">
                             <x-button class="bg-green-500 text-white" wire:click="applyNow({{ $lands->id }})">Apply Now</x-button>
                         </footer>

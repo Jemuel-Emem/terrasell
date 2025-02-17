@@ -15,6 +15,7 @@ class postland extends Model
         'landmeasurement',
         'photo',
         'video',
+        'category'
 
     ];
 }

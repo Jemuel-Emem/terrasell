@@ -24,6 +24,8 @@ class PostLand extends Component
     public $photo;
     public $video;
     public $selectedLandId;
+    public $category;
+
 
     protected $rules = [
         'address' => 'required|string|max:255',
@@ -32,6 +34,7 @@ class PostLand extends Component
         'landmeasurement' => 'required|string|max:255',
         'photo' => 'nullable|image|max:1024',
         'video' => 'file|mimetypes:video/mp4,video/mpeg,video/quicktime|max:20480',
+        'category' => 'required|string',
     ];
 
     public function render()
@@ -87,6 +90,7 @@ class PostLand extends Component
             'landmeasurement' => $this->landmeasurement,
             'photo' => $photoPath,
             'video' => $videoPath,
+            'category' => $this->category,
         ]);
 
 
@@ -130,6 +134,7 @@ class PostLand extends Component
             'location' => $this->location,
             'price' => $this->price,
             'landmeasurement' => $this->landmeasurement,
+            'category' => $this->category,
         ]);
 
 

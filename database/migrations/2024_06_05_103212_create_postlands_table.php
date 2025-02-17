@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('price');
             $table->string('landmeasurement');
+            $table->string('category');
             $table->string('photo')->nullable();
             $table->string('video')->nullable();
             $table->timestamps();
