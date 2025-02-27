@@ -68,6 +68,7 @@ class Land extends Component
 
             Land_Apply::create([
                 'user_id' => $user->id,
+             
                 'location' => $this->selected_land['location'],
                 'address' => $this->selected_land['address'],
                 'landmeasurement' => $this->selected_land['landmeasurement'],

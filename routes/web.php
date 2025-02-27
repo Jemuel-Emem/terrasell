@@ -111,6 +111,10 @@ Route::middleware([
         Route::get('/post-land', function(){
             return view('agent.post-land');
         })->name('post-land');
+
+        Route::get('/land_schedule', function(){
+            return view('agent.land_schedule');
+        })->name('land_schedule');
      });
 
     //  Route::get('/', function () {

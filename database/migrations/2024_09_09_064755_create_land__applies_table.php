@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('number');
             $table->dateTime('appointment_schedule')->nullable();
             $table->string('status')->default('pending');
-
             $table->timestamps();
         });
     }

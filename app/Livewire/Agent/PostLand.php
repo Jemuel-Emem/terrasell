@@ -119,6 +119,7 @@ class PostLand extends Component
         $this->location = $land->location;
         $this->price = $land->price;
         $this->landmeasurement = $land->landmeasurement;
+        $this->category = $land->category;
 
         $this->edit_modal = true;
     }
