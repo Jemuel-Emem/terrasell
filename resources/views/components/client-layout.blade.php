@@ -67,6 +67,12 @@
                     <li>
                         <a href="{{ route('payment') }}" class="block py-2 px-3 text-blue-900 hover:text-blue-950 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Payment</a>
                     </li>
+
+                    <li>
+                        <a href="{{ route('history-payment') }}" class="block py-2 px-3 text-blue-900 hover:text-blue-950 uppercase font-bold rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Payment History</a>
+                    </li>
+
+
                     <li>
                         <a href="{{ route('logout') }}" class="block py-2 px-3 text-red-500 hover:text-red-600 uppercase font-bold bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Logout</a>
                     </li>

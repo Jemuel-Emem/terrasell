@@ -99,6 +99,11 @@ Route::middleware([
             return view('client.payment');
         })->name('payment');
 
+        Route::get('/paymentHistory', function(){
+            return view('client.payment-history');
+        })->name('history-payment');
+
+
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
      });
 

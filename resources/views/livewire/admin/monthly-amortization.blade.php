@@ -80,8 +80,17 @@
                 <x-input label="Block No" placeholder="" wire:model="blockno" />
                 <x-input label="Lot No" placeholder="" wire:model="lotno" />
                 <x-input label="Area" placeholder="" wire:model="area" />
-                <x-input label="Monthly Payment" placeholder="" wire:model="monthlypayment" />
-                <x-input label="Total Payment" placeholder="" wire:model="totalpayment" />
+                <x-input label="Total Cost" placeholder="" id="totalpayment" wire:model="totalpayment" />
+                <div>
+                    <label for="paymentDuration" class="block text-sm font-medium text-gray-700">Payment Duration</label>
+                    <select id="paymentDuration" wire:model="paymentDuration" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" onchange="calculateMonthlyPayment()">
+                        <option value="">Select Payment Duration</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="5">5 Years</option>
+                    </select>
+                </div>
+                <x-input label="Monthly Payment" placeholder="" wire:model="monthlypayment" id="monthlypayment" readonly />
             </div>
 
             <x-slot name="footer">
@@ -128,6 +137,16 @@
 </div>
 
 <script>
+
+function calculateMonthlyPayment() {
+        let totalPayment = parseFloat(document.getElementById('totalpayment').value) || 0;
+        let duration = parseInt(document.getElementById('paymentDuration').value) || 0;
+        let months = duration * 12; // Convert years to months
+        let monthlyPayment = months > 0 ? (totalPayment / months).toFixed(2) : 0;
+
+        document.getElementById('monthlypayment').value = monthlyPayment;
+        @this.set('monthlypayment', monthlyPayment); // Update Livewire property
+    }
     function printAmortizationTable() {
         let table = document.getElementById("amortizationTable").cloneNode(true);
 
