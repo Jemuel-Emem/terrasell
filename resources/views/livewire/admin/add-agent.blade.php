@@ -44,6 +44,37 @@
             {{ $agents->links() }}
         </div>
     </div>
+
+    <x-modal wire:model.defer="add_modal">
+        <x-card title="Add Agent">
+            <x-input label="Name" wire:model.defer="name" />
+            <x-input label="Number" wire:model.defer="number" />
+            <x-input label="Address" wire:model.defer="address" />
+            <x-input label="Username" wire:model.defer="username" />
+            <x-input label="Password" type="password" wire:model.defer="password" />
+
+            <div class="flex justify-end mt-4">
+                <x-button label="Cancel" negative wire:click="$set('add_modal', false)" />
+                <x-button label="Save" positive wire:click="addagent" />
+            </div>
+        </x-card>
+    </x-modal>
+
+    <x-modal wire:model.defer="edit_modal">
+        <x-card title="Edit Agent">
+            <x-input label="Name" wire:model.defer="name" />
+            <x-input label="Number" wire:model.defer="number" />
+            <x-input label="Address" wire:model.defer="address" />
+            <x-input label="Username" wire:model.defer="username" />
+            <x-input label="Password" type="password" wire:model.defer="password" />
+
+            <div class="flex justify-end mt-4">
+                <x-button label="Cancel" negative wire:click="$set('edit_modal', false)" />
+                <x-button label="Update" positive wire:click="updateagent" />
+            </div>
+        </x-card>
+    </x-modal>
+
 </div>
 
 <script>
